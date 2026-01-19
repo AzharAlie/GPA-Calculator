@@ -1,0 +1,315 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.app-container {
+  width: 100%;
+  max-width: 1200px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.header h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.subtitle {
+  font-size: 1.1em;
+  opacity: 0.9;
+  font-weight: 300;
+}
+
+.main-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  padding: 40px;
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .header h1 {
+    font-size: 2em;
+  }
+}
+
+.left-panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.right-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Course Form Styles */
+.course-form {
+  background: #f8f9fa;
+  padding: 25px;
+  border-radius: 10px;
+  border: 2px solid #e9ecef;
+}
+
+.course-form h2 {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 1.5em;
+}
+
+.form-group {
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 8px;
+  font-size: 0.95em;
+}
+
+.form-group input,
+.form-group select {
+  padding: 12px;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  font-size: 1em;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.submit-btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  margin-top: 10px;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.submit-btn:active {
+  transform: translateY(0);
+}
+
+/* GPA Display Styles */
+.gpa-display h2 {
+  color: #333;
+  margin-bottom: 15px;
+  font-size: 1.3em;
+}
+
+.gpa-card {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 30px;
+  border-radius: 10px;
+  border-left: 5px solid #667eea;
+  text-align: center;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.gpa-value {
+  font-size: 3.5em;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.gpa-status {
+  font-size: 1.2em;
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.gpa-info p {
+  color: #777;
+  font-size: 0.95em;
+}
+
+/* Course List Styles */
+.course-list {
+  background: #f8f9fa;
+  padding: 25px;
+  border-radius: 10px;
+  border: 2px solid #e9ecef;
+}
+
+.course-list h2 {
+  color: #333;
+  margin-bottom: 15px;
+  font-size: 1.3em;
+}
+
+.empty-message {
+  color: #999;
+  text-align: center;
+  padding: 20px;
+  font-style: italic;
+}
+
+.course-list ul {
+  list-style: none;
+}
+
+.course-item {
+  background: white;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-left: 4px solid #667eea;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.course-item:hover {
+  transform: translateX(5px);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.course-info {
+  flex: 1;
+}
+
+.course-info h3 {
+  color: #333;
+  margin-bottom: 5px;
+  font-size: 1.05em;
+}
+
+.course-info p {
+  color: #666;
+  font-size: 0.9em;
+}
+
+.grade-badge,
+.credits-badge {
+  background: #e3f2fd;
+  color: #1976d2;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.delete-btn {
+  background: #ff6b6b;
+  color: white;
+  border: none;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, transform 0.2s;
+  margin-left: 15px;
+  flex-shrink: 0;
+}
+
+.delete-btn:hover {
+  background: #ff5252;
+  transform: scale(1.1);
+}
+
+.clear-btn {
+  background: #ff9800;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.95em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  align-self: center;
+  width: 100%;
+}
+
+.clear-btn:hover {
+  background: #f57c00;
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header h1 {
+    font-size: 2em;
+  }
+
+  .gpa-value {
+    font-size: 2.5em;
+  }
+
+  .main-content {
+    padding: 20px;
+  }
+
+  .course-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .delete-btn {
+    margin-left: 0;
+    margin-top: 10px;
+    align-self: flex-end;
+  }
+}
