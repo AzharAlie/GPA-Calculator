@@ -1,0 +1,11 @@
+# Render.com Deployment Configuration for GPA Calculator Backend
+
+# This file tells Render how to build and run the backend
+runtime = "node"
+engines = { node = "18.x" }
+
+# Build command - installs dependencies and builds (if needed)
+build = "npm install --prefix server"
+
+# Start command - starts the Node.js server
+start = "node server/server.js"
